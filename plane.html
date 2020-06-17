@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.js"></script> -->
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    let img;
+  function setup(){
+    createCanvas(windowWidth, windowHeight, WEBGL)
+    img = loadImage("04.png");
+  }
+  function draw(){
+    if(!mouseIsPressed)
+      background(0)
+      orbitControl(5);
+      noStroke()
+      texture(img);
+      rotateX(radians(-25))
+      rotateY(radians(-frameCount*.5))
+      sx = mouseX*2
+      sy = mouseY*2
+    plane(sx, sx* .5)
+    // sphere(sx, sx*.5);
+  }
+    </script>
+
+
+  </body>
+</html>

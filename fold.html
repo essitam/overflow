@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.js"></script> -->
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var limbo;
+    function preload(){
+      limbo = loadImage('shine.png');
+    }
+
+      function setup(){
+        createCanvas(600, 600, WEBGL);
+        frameRate(2);
+
+      }
+      function draw(){
+        background(0);
+        // ambientLight(255);
+        textureWrap(CLAMP);
+        // textureMode(NORMAL);
+        // translate(-50, -50);
+
+          fill(255);
+          // translate(width/2, height/2);
+          stroke(255);
+
+        // beginShape(TRIANGLE_STRIP){
+        //   for (let i = 0; i < c.length; i++){
+        //     let coord = c[i];
+        //     let u = map(coord.x, -img.width * 0.5, img.width * 0.5, 0, 1);
+        //     let v = map(coord.y, -img.height * .5, img.height * .5, 0, 1);
+        //     if(dist(mouseX - width /2, mouseY - height/ 2, coord.x, coord.y)){
+        //       coord.z += 2;
+        //     }
+        //     vertex(coord.x, coord.y, coord.z, u, v);
+        //   }
+        // }
+        beginShape();
+        texture(limbo);
+    for(var i = 0; i < 10; i++) {
+
+      var x = random(-200, 200);
+      var y = random(-200, 200);
+      var z = random(-200, 200);
+      var u = random(0, limbo.width);
+      var v = random(0, limbo.height);
+      vertex(x, y, z, u, v);
+    }
+    endShape(CLOSE);
+
+          // beginShape();
+          // vertex(0, 0, 0, 1, 0);
+          // vertex(100, 0, 0, 0, 0);
+          // vertex(100, 100, 0+mouseX, 1, 1);
+          // vertex(0, 100, 0, 0, 1);
+          // endShape(CLOSE);
+      }
+    </script>
+
+
+  </body>
+</html>
